@@ -31,4 +31,7 @@ export default {
 .image{
     height:200px !important;
 }
+.v-application--is-ltr .v-window__prev {
+    z-index: 0 !important;
+}
 </style>
