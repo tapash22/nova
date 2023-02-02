@@ -32,7 +32,7 @@ const routes = [
         component: () => import(/* webpackChunkName: "product" */ '../views/client/Product.vue')
       },
       {
-        path: 'contact',
+        path: 'contactus',
         name: 'contact',
         component: () => import(/* webpackChunkName: "contact" */ '../views/client/Contact.vue')
       },
