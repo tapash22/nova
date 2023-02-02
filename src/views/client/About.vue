@@ -2,8 +2,8 @@
 <div class="about">
     <v-container>
         <v-row>
-            <v-col cols="12" sm="12" md="12" lg="12" xl="12" class="col">
-                <v-img src="@/assets/about.jpg" height="400"  />
+            <v-col cols="12" sm="12" md="12" lg="12" xl="12" class="col" >
+                <v-img src="@/assets/about.jpg" height="400" />
             </v-col>
         </v-row>
         <v-row>

@@ -2,11 +2,8 @@
 <div class="gallery">
     <v-row class="d-flex justify-center my-5">
 
-        <v-col cols="12" sm="12" md="3" lg="3" xl="3" v-for="product in products" :key="product.id" class="mx-2">
-
-            <v-card elevation="3">
-                <v-img :src="product.img" height="200" cover></v-img>
-            </v-card>
+        <v-col cols="12" sm="12" md="3" lg="3" xl="3" v-for="gallery in gallerys" :key="gallery.id" class="mx-2">
+            <Card :item="gallery" />
         </v-col>
 
     </v-row>
@@ -14,12 +11,14 @@
 </template>
 
 <script>
+import Card from '@/components/Card.vue';
+
 export default {
     name: 'gallery',
 
     data() {
         return {
-            products: [{
+            gallerys: [{
                     id: 1,
                     img: require('../../assets/chi.png'),
                 },
@@ -34,6 +33,10 @@ export default {
                 
             ],
         }
+    },
+
+    components:{
+        Card
     }
 
 }
