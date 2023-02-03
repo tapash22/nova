@@ -71,7 +71,7 @@ export default {
                 {
                     id: 5,
                     name: 'Contact Us',
-                    link: '/contact'
+                    link: '/contactus'
                 },
                 {
                     id: 6,

@@ -40,6 +40,79 @@ const routes = [
           ),
       },
       {
+        path: "/poultry",
+        name: "poultry",
+        component: () =>
+          import(
+            /* webpackChunkName: "poultry" */ "../views/client/subfolder/Poultry.vue"
+          ),
+      },
+      {
+        path: "/dairy",
+        name: "dairy",
+        component: () =>
+          import(
+            /* webpackChunkName: "dairy" */ "../views/client/subfolder/Dairy.vue"
+          ),
+      },
+      {
+        path: "/aqua",
+        name: "aqua",
+        component: () =>
+          import(
+            /* webpackChunkName: "aqua" */ "../views/client/subfolder/Aqua.vue"
+          ),
+      },
+      {
+        path: "nutritional",
+        name: "nutritional",
+        component: () =>
+          import(
+            /* webpackChunkName: "nutritional" */ "../views/client/subpage/Nutritional.vue"
+          ),
+      },
+      {
+        path: "antibioticpoultry",
+        name: "antibioticpoultry",
+        component: () =>
+          import(
+            /* webpackChunkName: "antibioticpoultry" */ "../views/client/subpage/AntibioticPoultry.vue"
+          ),
+      },
+      {
+        path: "harbal",
+        name: "harbal",
+        component: () =>
+          import(
+            /* webpackChunkName: "harbal" */ "../views/client/subpage/Harbal.vue"
+          ),
+      },
+      {
+        path: "probiotics",
+        name: "probiotics",
+        component: () =>
+          import(
+            /* webpackChunkName: "probiotics" */ "../views/client/subpage/Probiotics.vue"
+          ),
+      },
+      {
+        path: "antibioticsdairy",
+        name: "antibioticsdairy",
+        component: () =>
+          import(
+            /* webpackChunkName: "antibioticsdairy" */ "../views/client/subpage/AntibioticsDairy.vue"
+          ),
+      },
+      {
+        path: "penathaone",
+        name: "penathaone",
+        component: () =>
+          import(
+            /* webpackChunkName: "penathaone" */ "../views/client/subpage/PenathaoneDairy.vue"
+          ),
+      },
+
+      {
         path: "contactus",
         name: "contact",
         component: () =>
@@ -55,6 +128,7 @@ const routes = [
       },
     ],
   },
+
   {
     path: "/dashboard",
     component: Dashboard,
@@ -65,25 +139,33 @@ const routes = [
         path: "register",
         name: "register",
         component: () =>
-          import(/* webpackChunkName: "register" */ "../views/admin/Register.vue"),
+          import(
+            /* webpackChunkName: "register" */ "../views/admin/Register.vue"
+          ),
       },
       {
         path: "gallery",
         name: "gallery",
         component: () =>
-          import(/* webpackChunkName: "gallery" */ "../views/admin/Gallery.vue"),
+          import(
+            /* webpackChunkName: "gallery" */ "../views/admin/Gallery.vue"
+          ),
       },
       {
         path: "partners",
         name: "partners",
         component: () =>
-          import(/* webpackChunkName: "partners" */ "../views/admin/Partners.vue"),
+          import(
+            /* webpackChunkName: "partners" */ "../views/admin/Partners.vue"
+          ),
       },
       {
         path: "products",
         name: "products",
         component: () =>
-          import(/* webpackChunkName: "products" */ "../views/admin/Products.vue"),
+          import(
+            /* webpackChunkName: "products" */ "../views/admin/Products.vue"
+          ),
       },
       {
         path: "slider",

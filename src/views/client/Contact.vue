@@ -23,7 +23,7 @@
                         <v-card>
                             <v-card-title class="d-flex justify-center title ">With us</v-card-title>
                             <v-card-text>
-                                <v-list class="d-flex" color="transparent">
+                                <v-list class="d-flex-sm-and-up d-block-sm-and-down"  color="transparent">
                                     <v-list-item>
                                         <v-list-item-content class="pa-5 text-center text-body-1">
                                             {{ address }}
@@ -72,6 +72,10 @@ export default {
                 }
             ]
         }
+    },
+
+    mounted(){
+        window.scrollTo(0,0)
     }
 
 }

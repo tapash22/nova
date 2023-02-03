@@ -40,6 +40,10 @@ export default {
 
     components: {
         Card
+    },
+
+    mounted(){
+        window.scrollTo(0,0)
     }
 
 }

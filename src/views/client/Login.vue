@@ -35,6 +35,9 @@ export default {
             email: '',
             password: ''
         }
+    },
+    mounted(){
+        window.scrollTo(0,0)
     }
 
 }
