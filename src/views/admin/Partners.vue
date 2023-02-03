@@ -15,12 +15,12 @@
                 </div>
                 <div class="form-group">
                     <label>Partner Image</label>
-                    <v-text-field type="file" ref="pimage" @change="uploadImage()"  label="image" required outlined></v-text-field>
+                    <input class="input"  type="file" ref="pimage" @change="uploadImage()"  label="image" required />
                    
                 </div>
                 <div class="my-3">
                    
-                    <v-btn color="green" type="submit" @click.prevent="createPartner" > Submit</v-btn>
+                    <v-btn color="green" @click.prevent="createPartner" > Submit</v-btn>
                 </div>
             </form>
         </div>
@@ -143,6 +143,13 @@ export default {
   
   
 <style scoped>
+
+.input{
+    border:1px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+}
 .partner {
     width: 100%;
     height: 100%;

@@ -11,12 +11,12 @@
                 </div>
                 <div class="form-group">
                     <label>Upload Event Image</label>
-                    <v-text-field type="file" ref="gimage" @change="uploadImage"  label="image" required outlined></v-text-field>
+                    <input class="input"  type="file" ref="gimage" @change="uploadImage"  label="image" required />
                    
                 </div>
                 <div class="my-3">
 
-                    <v-btn color="green" type="submit" @click.prevent="addGallery" > Submit</v-btn>
+                    <v-btn color="green" @click.prevent="addGallery" > Submit</v-btn>
                 </div>
             </form>
         </div>
@@ -132,6 +132,13 @@ export default {
   
   
 <style scoped>
+
+.input{
+    border:1px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+}
 .gallerys {
     width: 100%;
     height: 100%;

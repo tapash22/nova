@@ -32,7 +32,7 @@
                     {{ errors.password_confirmation[0] }}
                 </span>
             </div>
-            <v-btn color="green" type="submit" @click.prevent="register" > Submit</v-btn>
+            <v-btn color="green"  @click.prevent="register" > Submit</v-btn>
            
         </div>
     </div>

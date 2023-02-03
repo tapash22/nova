@@ -111,6 +111,14 @@ const routes = [
             /* webpackChunkName: "penathaone" */ "../views/client/subpage/PenathaoneDairy.vue"
           ),
       },
+      {
+        path: "productdetails/:id",
+        name: "productdetails",
+        component: () =>
+          import(
+            /* webpackChunkName: "productdetails" */ "../views/client/ProductDetails.vue"
+          ),
+      },
 
       {
         path: "contactus",

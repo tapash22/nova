@@ -3,7 +3,7 @@
     <div class="row">
         <h3>Upload Sliders for Home page</h3>
         <div class="col-md-12">
-            <form method="POST" action="" enctype="multipart/form-data">
+            <form enctype="multipart/form-data">
                 <div class="form-group">
                     <label>Slider Name</label>
                     <v-text-field v-model="sname" label="name" required outlined></v-text-field>
@@ -11,12 +11,12 @@
                 </div>
                 <div class="form-group">
                     <label>Upload slider Image</label>
-                    <v-text-field type="file" ref="simage" @change="uploadImage()" required outlined></v-text-field>
+                    <input type="file" ref="simage" @change="uploadImage()" class="input" />
                   
                 </div>
                 <div class="my-3">
                   
-                    <v-btn color="green" type="submit" @click.prevent="onSlider" > Submit</v-btn>
+                    <v-btn color="green"  @click.prevent="onSlider" > Submit</v-btn>
                 </div>
             </form>
         </div>
@@ -137,6 +137,12 @@ export default {
   
   
 <style scoped>
+.input{
+    border:1px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+}
 .slider {
     width: 100%;
     height: 100%;

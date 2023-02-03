@@ -6,30 +6,16 @@
             <form method="POST" action="" enctype="multipart/form-data">
                 <div class="form-group">
                     <label>Product Name</label>
-            
+
                     <v-text-field v-model="pdname" label="name" required outlined></v-text-field>
                 </div>
                 <div class="form-group">
                     <label>Catagory</label>
-                    <select class="form-control" v-model="pcname">
-                        <option disabled value="">Select product Catagory...</option>
-                        <option>poultry</option>
-                        <option>dairy</option>
-                        <option>aqua</option>
-                    </select>
+                    <v-select v-model="pcname" :items="category" label="Select" persistent-hint return-object single-line outlined></v-select>
                 </div>
                 <div class="form-group">
                     <label>Sub-Catagory</label>
-                    <select v-model="pscname" class="form-control">
-                        <option disabled value="">Select product Sub-Catagory...</option>
-                        <option>antibiotic</option>
-                        <option>nutritional</option>
-                        <option>harbal</option>
-                        <option>probiotics</option>
-                        <option>anticoccidial</option>
-                        <option>penathaone</option>
-                        <option>others</option>
-                    </select>
+                    <v-select v-model="pscname" :items="subcategory" label="Select" persistent-hint return-object single-line outlined></v-select>
                 </div>
                 <div class="form-group">
                     <label>Product Intro</label>
@@ -37,21 +23,21 @@
                 </div>
                 <div class="form-group">
                     <label>Dosage</label>
-                    
+
                     <v-text-field v-model="pdescription" label="description" required outlined></v-text-field>
                 </div>
                 <div class="form-group">
                     <label>Composition</label>
-                    <v-text-field type="file" ref="pcomimage" @change="uploadDimage()" label="image" required outlined></v-text-field>
-                    <input class="form-control" type="file" ref="pcomimage" @change="uploadDimage()" />
+                    <input class="input" type="file" ref="pcomimage" @change="uploadDimage()" />
                 </div>
-                <div class="form-group">
+
+                <div class="form-group " style="margin-top:10px; margin-bottom:10px">
                     <label>Upload Image</label>
-                    <input class="form-control" type="file" ref="pimage" @change="uploadImage()" />
+                    <input class="input" type="file" ref="pimage" @change="uploadImage()" />
                 </div>
                 <div class="my-3">
-               
-                    <v-btn color="green" type="submit" @click.prevent="addProduct" > Submit</v-btn>
+
+                    <v-btn color="green" type="submit" @click.prevent="addProduct"> Submit</v-btn>
                 </div>
             </form>
         </div>
@@ -106,14 +92,18 @@
 </div>
 </template>
 
-  
-  
 <script>
 import Product from "@/api/Products";
 
 export default {
     data() {
         return {
+            category: [
+                'Poultry', 'Dairy', 'Aqua'
+            ],
+            subcategory: [
+                'antibiotic', 'nutritional', 'harbal', 'probiotics', 'penathaone'
+            ],
             pdname: "",
             pcname: "",
             pscname: "",
@@ -196,9 +186,15 @@ export default {
     },
 };
 </script>
-  
-  
+
 <style scoped>
+.input {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 15px;
+    width: 100%;
+}
+
 .product {
     width: 100%;
     height: 100%;
