@@ -14,9 +14,9 @@ export default{
         return Api().delete(`/product/delete/${id}`);
     },
 
-    getAntibiotic(){
-        return Api().get('/product/antibiotic');
-    },
+    // getAntibiotic(){
+    //     return Api().get('/product/antibiotic');
+    // },
 
     getNutritional(){
         return Api().get('/product/nutritional');
@@ -30,8 +30,8 @@ export default{
         return Api().get('/product/probiotics');
     },
 
-    getAnticoccidial(){
-        return Api().get('/product/anticoccidial');
+    getAntibiotics(){
+        return Api().get('/product/antibiotics');
     },
 
     // getOthers(){
@@ -42,8 +42,8 @@ export default{
         return Api().get('/product/penathaone');
     },
 
-    getAntibiotics(){
-        return Api().get('/product/antibiotics');
+    getAntibiotic(){
+        return Api().get('/product/antibiotic');
     },
 
     getProductid(id){

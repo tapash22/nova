@@ -3,7 +3,7 @@
         <v-container>
             <v-row class="d-flex justify-center">
                 <v-col cols="12" sm="12" md="3" lg="3" xl="3" v-for="dairy in dairys" :key="dairy.id" >
-                    <Card :item="dairy" />
+                    <Card1 :item="dairy" />
                 </v-col>
             </v-row>
         </v-container>
@@ -11,7 +11,7 @@
 </template>
 
 <script>
-import Card from '@/components/Card.vue';
+import Card1 from '@/components/Card1.vue';
 
 export default {
     name:'dairy',
@@ -36,7 +36,7 @@ export default {
     },
 
     components:{
-        Card,
+        Card1,
     },
 
     mounted(){

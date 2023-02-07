@@ -1,49 +1,42 @@
 <template>
-    <div class="antibiotic-poultry">
-        <v-container>
-            <v-row class="d-flex justify-center">
-                <v-col cols="6" sm="6" md="3" lg="3" xl="3" v-for="poultry in poultrys" :key="poultry.id">
-                    <Product :item="poultry" />
-                </v-col>
-            </v-row>
-        </v-container>
-    </div>
+<div class="antibiotic-poultry">
+    <v-container>
+        <v-row class="d-flex justify-center">
+            <v-col cols="6" sm="6" md="3" lg="3" xl="3" v-for="poultry in products" :key="poultry.id">
+                <Product :item="poultry" />
+            </v-col>
+        </v-row>
+    </v-container>
+</div>
 </template>
 
 <script>
 import Product from '@/components/Product.vue';
+import product from '@/api/Products';
 
 export default {
-    name:'antibiotic-poultry',
-    data(){
-        return{
-            poultrys:[
-                {
-                    id:1,
-                    name:'Antibiotic',
-                    img:require('@/assets/product/anti.png')
-                },
-                {
-                    id:2,
-                    name:'Nutritional',
-                    img:require('@/assets/product/nutri.jpg')
-                },
-                {
-                    id:3,
-                    name:'Harbal',
-                    img:require('@/assets/product/harbal.jpg')
-                },
-                {
-                    id:4,
-                    name:'Probiotics & Prebiotics',
-                    img:require('@/assets/product/nutri.jpg')
-                },
-            ]
+    name: 'antibiotic-poultry',
+    data() {
+        return {
+            products: []
         }
     },
 
-    components:{
+    components: {
         Product
-    }
+    },
+    created(){
+        this.getProduct();
+    },
+
+    methods: {
+        getProduct() {
+            product.getAntibiotic().then((response) => {
+                this.products = response.data;
+                console.log(this.products);
+            });
+        },
+    },
+
 }
 </script>

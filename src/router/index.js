@@ -153,10 +153,10 @@ const routes = [
       },
       {
         path: "gallery",
-        name: "gallery",
+        name: "gallerys",
         component: () =>
           import(
-            /* webpackChunkName: "gallery" */ "../views/admin/Gallery.vue"
+            /* webpackChunkName: "gallerys" */ "../views/admin/Gallery.vue"
           ),
       },
       {

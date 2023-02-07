@@ -11,10 +11,16 @@ export default new Vuex.Store({
     partner:[],
   },
   getters: {
+
+    
   },
   mutations: {
+
+
   },
   actions: {
+
+
   },
   modules: {
   }

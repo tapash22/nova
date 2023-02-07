@@ -1,7 +1,7 @@
 <template>
 <div class="home">
     <v-row>
-        <TheSlider />
+        <TheSlider :sliders="sliders"/>
     </v-row>
     <v-container>
         <v-row class="my-5 d-flex justify-center">
@@ -22,7 +22,7 @@
         <h2 class="d-flex justify-center text-h6 font-weight-bold my-5">PRODUCTS</h2>
         <v-row class="d-flex justify-center">
             <v-col cols="12" sm="12" md="3" lg="3" xl="3" v-for="product in products" :key="product.id" class="mx-2">
-                <Card :item="product" />
+                <Card1 :item="product" />
             </v-col>
         </v-row>
         <!-- product end -->
@@ -42,11 +42,15 @@
 <script>
 import TheSlider from '@/components/TheSlider.vue';
 import Card from '@/components/Card.vue';
+import Card1 from '@/components/Card1.vue';
+import Slider from '@/api/Slider';
+import Partner from '@/api/Partner';
 
 export default {
     name: 'home',
     data() {
         return {
+            sliders:[],
             products: [{
                     id: 1,
                     name: 'Poultry',
@@ -66,47 +70,38 @@ export default {
                     img: require('../../assets/fi.png'),
                 },
             ],
-            partners: [{
-                    id: 1,
-                    name: 'Poultry',
-                    link: 'poultry',
-                    img: require('../../assets/chi.png'),
-                },
-                {
-                    id: 2,
-                    name: 'dairy',
-                    link: 'dairy',
-                    img: require('../../assets/co.png'),
-                },
-                {
-                    id: 3,
-                    name: 'aqua',
-                    link: 'dairy',
-                    img: require('../../assets/fi.png'),
-                },
-                {
-                    id: 4,
-                    name: 'Poultry',
-                    link: 'poultry',
-                    img: require('../../assets/chi.png'),
-                },
-                {
-                    id: 5,
-                    name: 'dairy',
-                    link: 'dairy',
-                    img: require('../../assets/co.png'),
-                },
-            ]
+            partners: []
         }
 
+    },
+
+    created(){
+        this.getSlider();
+        this.getPartner();
     },
 
     components: {
         TheSlider,
         Card,
+        Card1,
     },
     mounted(){
         window.scrollTo(0,0)
+    },
+
+    methods:{
+        getSlider() {
+            Slider.getSlider().then((response) => {
+                this.sliders = response.data;
+                console.log(this.sliders);
+            });
+        },
+        getPartner() {
+            Partner.getPartner().then((response) => {
+                this.partners = response.data;
+                console.log(this.partners);
+            });
+        },
     }
 }
 </script>

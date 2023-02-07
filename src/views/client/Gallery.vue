@@ -12,27 +12,18 @@
 
 <script>
 import Card from '@/components/Card.vue';
+import Gallery from '@/api/Gallery';
 
 export default {
     name: 'gallery',
 
     data() {
         return {
-            gallerys: [{
-                    id: 1,
-                    img: require('../../assets/chi.png'),
-                },
-                {
-                    id: 2,
-                    img: require('../../assets/co.png'),
-                },
-                {
-                    id: 3,
-                    img: require('../../assets/fi.png'),
-                },
-                
-            ],
+            gallerys: [],
         }
+    },
+    created(){
+        this.getGallery();
     },
 
     mounted(){
@@ -41,7 +32,16 @@ export default {
 
     components:{
         Card
-    }
+    },
+
+    methods: {
+        getGallery() {
+            Gallery.getGallery().then((response) => {
+                this.gallerys = response.data;
+                console.log(this.gallerys);
+            });
+        },
+    },
 
 }
 </script>

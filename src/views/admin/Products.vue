@@ -99,10 +99,10 @@ export default {
     data() {
         return {
             category: [
-                'Poultry', 'Dairy', 'Aqua'
+                'poultry', 'dairy', 'aqua'
             ],
             subcategory: [
-                'antibiotic', 'nutritional', 'harbal', 'probiotics', 'penathaone'
+                'antibiotic', 'nutritional', 'harbal', 'probiotics','penathaone'
             ],
             pdname: "",
             pcname: "",

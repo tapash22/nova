@@ -85,7 +85,7 @@
                 <v-app-bar-nav-icon  @click.stop="drawer = !drawer" class="mt-8 mr-5"  />
             </div>
             <v-navigation-drawer v-model="drawer"  class="title" >
-                <v-list dense expand >
+                <v-list  expand >
 
                     <template v-for="item in lists">
 
@@ -192,6 +192,7 @@ export default {
 @import url("https://fonts.googleapis.com/css2?family=Alfa+Slab+One&family=Lato:wght@100&family=Lobster&family=Luxurious+Roman&family=Oswald:wght@400;500&family=Poppins:wght@100;500&family=Roboto+Condensed:wght@300&family=Roboto:wght@100&display=swap");
 .title {
   background: #7dced1;
+
 }
 .navigation {
     width: 100%;
