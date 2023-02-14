@@ -12,10 +12,10 @@
                 </v-card-title>
                 <v-card-text class="my-2">
                     <form>
-                        <v-text-field v-model="email" label="E-mail" required outlined></v-text-field>
-                        <v-text-field v-model="password" label="Password" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'" :type="show1 ? 'text' : 'password'" name="input-10-1" hint="At least 8 characters" @click:append="show1 = !show1" outlined></v-text-field>
+                        <v-text-field v-model="form.email" label="E-mail" required outlined></v-text-field>
+                        <v-text-field v-model="form.password" label="Password" :append-icon="show1 ? 'mdi-eye' : 'mdi-eye-off'" :type="show1 ? 'text' : 'password'" name="input-10-1" hint="At least 8 characters" @click:append="show1 = !show1" outlined></v-text-field>
 
-                        <v-btn elevation="2" color="#0a7691a2">Login</v-btn>
+                        <v-btn elevation="2" color="#0a7691a2" @click.prevent="login">Login</v-btn>
                     </form>
                 </v-card-text>
             </v-card>
@@ -26,18 +26,39 @@
 </template>
 
 <script>
+import User from '@/api/User';
+
 export default {
     name: 'login',
 
     data() {
         return {
             show1: false,
-            email: '',
-            password: ''
+            form: {
+                email: "",
+                password: "",
+                device_name: "browser",
+            },
+            errors: [],
         }
     },
-    mounted(){
-        window.scrollTo(0,0)
+    mounted() {
+        window.scrollTo(0, 0)
+    },
+    methods: {
+        login() {
+            User.login(this.form)
+                .then((response) => {
+                    this.$root.$emit("login", true);
+                    localStorage.setItem("token", response.data);
+                    this.$router.push('/dashboard');
+                })
+                .catch((error) => {
+                    if (error.response.status === 422) {
+                        this.errors = error.response.data.errors;
+                    }
+                });
+        },
     }
 
 }
