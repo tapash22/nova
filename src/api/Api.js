@@ -1,7 +1,7 @@
 import axios from "axios";
 
 let BaseApi = axios.create({
-  baseURL: process.env.VUE_APP_BASE_URL
+  baseURL: "https://api1.novatechbdltd.com/api"
 });
 
 let Api = function(){
