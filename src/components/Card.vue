@@ -15,7 +15,7 @@
     
     <v-card v-else>
         <v-card elevation="3">
-            <v-img :src="'/sub/storage/app/' +item.img" height="250" contain></v-img>
+            <v-img :src="'/sub/storage/app/' +item.gimage" height="250" contain></v-img>
       
         </v-card>
     </v-card>

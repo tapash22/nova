@@ -31,7 +31,7 @@
         <h2 class="d-flex justify-center text-h6 font-weight-bold my-5">PARTNERS</h2>
         <v-row class="d-flex justify-center my-2">
             <v-col cols="6" sm="6" md="2" lg="2" xl="2" v-for="partner in partners" :key="partner.id" class="">
-                <Card :item="partner" />
+                <Card2 :item="partner" />
             </v-col>
         </v-row>
         <!-- partner end -->
@@ -41,7 +41,7 @@
 
 <script>
 import TheSlider from '@/components/TheSlider.vue';
-import Card from '@/components/Card.vue';
+import Card2 from '@/components/Card2.vue';
 import Card1 from '@/components/Card1.vue';
 import Slider from '@/api/Slider';
 import Partner from '@/api/Partner';
