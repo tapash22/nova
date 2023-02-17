@@ -2,9 +2,9 @@
     <div class="card2">
         <a :href="item.plink" class="text-decoration-none">
             <v-card elevation="3">
-                <v-img :src="'/sub/storage/app/' +item.pimage" height="200" class="image" contain></v-img>
+                <v-img :src="'/sub/storage/app/' +item.pimage" height="200" class="image" ></v-img>
                 <v-card-title class="
-                        d-flex justify-center text-body-1
+                        d-flex justify-start text-body-2
                         text-uppercase black--text
                         title
                         ">

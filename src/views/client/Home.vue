@@ -1,7 +1,7 @@
 <template>
 <div class="home">
     <v-row>
-        <TheSlider :sliders="sliders"/>
+        <TheSlider  :sliders="sliders" />
     </v-row>
     <v-container>
         <v-row class="my-5 d-flex justify-center">
@@ -82,7 +82,7 @@ export default {
 
     components: {
         TheSlider,
-        Card,
+        Card2,
         Card1,
     },
     mounted(){
